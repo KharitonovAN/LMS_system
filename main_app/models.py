@@ -9,7 +9,7 @@ class Course(models.Model):
     description = models.TextField(verbose_name='Описание', **NULLABLE)
 
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.description} / {self.course}'
 
     class Meta:
         verbose_name = 'Курс'
