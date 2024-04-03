@@ -6,8 +6,8 @@ from main_app.models import Course, Lesson
 
 class Command(BaseCommand):
     def handle(self, *args, **options):
-        """ Создание тестовых курсов и уроков """
-        # Удалить ранее созданные
+        """Тестовые курсы и уроки"""
+        # Удаление ранее созданных
         Lesson.objects.all().delete()
         Course.objects.all().delete()
 
@@ -17,7 +17,7 @@ class Command(BaseCommand):
             for sql in sequence_sql:
                 cursor.execute(sql)
 
-        # Лист с Курсами
+        # Курсы
         course_list = [
             {'title': 'Python', 'description': 'Изучение языка программирования Python с нуля.'},
             {'title': 'SQL', 'description': 'Основы и методы использования SQL.'}
@@ -29,7 +29,7 @@ class Command(BaseCommand):
 
         Course.objects.all().bulk_create(fill_course)
 
-        # Лист с Уроками
+        # Уроки
         lessons_list = [
             {'title': 'Введение', 'description': 'Введение в основы программирования. Синтаксис. Функции. Циклы.',
              'course_id': 1},

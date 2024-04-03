@@ -4,12 +4,12 @@ from users.serializers.user import UserSerializer, UserProfileSerializer
 
 
 class UserUpdateAPIView(UpdateAPIView):
-    """ Представление для обновления профиля User """
+    """Представление для обновления User"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
 
 
 class UserProfileAPIView(RetrieveAPIView):
-    """ Представление для профиля User """
+    """Представление для User"""
     serializer_class = UserProfileSerializer
     queryset = User.objects.all()

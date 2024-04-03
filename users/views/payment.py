@@ -6,7 +6,7 @@ from rest_framework.filters import OrderingFilter
 
 
 class PaymentListAPIView(ListAPIView):
-    """ Представление для списка платежей """
+    """Представление для списка платежей"""
     serializer_class = PaymentSerializer
     queryset = Payment.objects.all()
     filter_backends = [DjangoFilterBackend, OrderingFilter]

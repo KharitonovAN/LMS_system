@@ -4,6 +4,7 @@ NULLABLE = {'null': True, 'blank': True}
 
 
 class Course(models.Model):
+    """Модель для сущности Course"""
     title = models.CharField(max_length=150, verbose_name='Название')
     image = models.ImageField(upload_to='course.py/', verbose_name='Изображение', **NULLABLE)
     description = models.TextField(verbose_name='Описание', **NULLABLE)
@@ -17,6 +18,7 @@ class Course(models.Model):
 
 
 class Lesson(models.Model):
+    """Модель для сущности Lesson"""
     description = models.TextField(verbose_name='Описание', **NULLABLE)
     image = models.ImageField(upload_to='lesson/', verbose_name='Изображение', **NULLABLE)
     video_url = models.URLField(verbose_name='Ссылка на видео', **NULLABLE)

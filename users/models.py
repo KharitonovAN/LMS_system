@@ -6,7 +6,7 @@ NULLABLE = {'null': True, 'blank': True}
 
 
 class User(AbstractUser):
-
+    """Модель для User"""
     username = None
     email = models.EmailField(unique=True, verbose_name='Email')
     avatar = models.ImageField(upload_to='users/', verbose_name='Аватар', **NULLABLE)

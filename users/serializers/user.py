@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    payments = serializers.SerializerMethodField()  # платежи пользователя
+    payments = serializers.SerializerMethodField()  # Платежи
 
     def get_payments(self, instance):
         return PaymentSerializer(Payment.objects.filter(user=instance), many=True).data
