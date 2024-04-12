@@ -1,4 +1,4 @@
-from email.headerregistry import Group
+from django.contrib.auth.models import Group
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from users.models import User
@@ -54,4 +54,4 @@ class UserDeleteAPIView(DestroyAPIView):
     """Представление для удаления User"""
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated, IsUserOwner]
+    permission_classes = [IsAuthenticated]
